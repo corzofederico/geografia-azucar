@@ -1,0 +1,330 @@
+/* text font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,900&display=swap');
+/*** Icons Font Awesome ***/
+@import url('https://kit-pro.fontawesome.com/releases/v6.0.0/css/pro.min.css');
+
+*{
+    font-family:'Montserrat', sans-serif;
+}
+html{
+    height: 100%;
+}
+body{
+    margin:0;
+    background-color:#fefefe;
+    font-size:15px;
+    letter-spacing: 0.5px;
+    color: #000;
+    scroll-behavior: smooth;
+}
+b{font-weight:600;}
+a{cursor:pointer;color:#000;text-decoration:none;}
+h1,h2,h3,h4,h5,h6{
+    margin-block-start:auto;
+    margin-block-end:auto;
+    margin-inline-start:auto;
+    margin-inline-end:auto;
+    font-weight:600;
+}
+button {
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #000;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+button:hover{
+    opacity: .7;
+}
+#links{
+    display: grid;
+    gap: 5px;
+}
+#links > a{
+    color: blue;
+}
+#links > a:hover{
+    opacity: .5;
+}
+
+/* header */
+.header{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: calc(100% - 10px);
+    padding-bottom: 10px;
+    /* background-color: aqua; */
+    background-image: url('../images/header.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-template-rows:1fr;
+    gap: 10px;
+}
+.header h1{
+    font-size: 3.5rem;
+}
+.header :is(h1,b){
+    color: #000;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    /* lau */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .7);
+}
+.header i{
+    color: #000;
+    font-size: 2.5rem;
+    /* text-shadow: 5px 5px 5px #0009; */
+    align-self: center;
+    justify-self: center;
+    cursor:pointer;
+    /* lau */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .7);
+    margin-bottom: 10px;
+}
+
+.sticky{
+    background-color: rgb(235, 157, 85);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    z-index: 4;
+    padding: 20px;
+    text-align: center;
+}
+
+.section{
+    --first:300px;
+    display: grid;
+    opacity: 0;
+    padding: 20px;
+    gap: 20px;
+    grid-template-columns: var(--first) minmax(min(300px,100%),1fr); 
+}
+.section.table{
+    grid-template-columns: repeat(auto-fit,minmax(min(300px,100%),1fr));
+}
+.section > .first{
+    --width:300px;
+    --height:300px;
+    width:var(--width);
+    height:var(--height);
+}
+.section > .second{
+    --width:100%;
+    width:var(--width);
+}
+.section > div > h2{
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+@media (orientation:portrait){
+    .section{
+        grid-template-columns:inherit;
+    }
+    .section > .first{
+        --width:100% !important;
+    }
+}
+
+.section.fade{
+    animation: fadeIn 1s ease both;
+}
+.section.fade > .first{
+    animation: fadeIn 1s ease .5s both;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate3d(-10%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.section > img.first{
+    --width: calc(300px - (20px*2));/* use like padding */
+    object-fit: contain;
+    justify-self: center;
+}
+
+.section.map{
+    --first:500px;
+    grid-template-rows: 1fr;
+}
+.section.map > .first{
+    --width:var(--first);
+    display: grid;
+    grid-template-rows:auto 1fr;
+}
+.section.map > .second{
+    border-radius: 10px;
+    background-color: #eee;
+    --width:calc(100% - (20px*2));
+    padding: 20px;
+}
+
+.refMap{
+    display: grid;
+    gap: 5px;
+    margin-top: 10px;
+}
+.refMap > div{
+    display: grid;
+    gap: 10px;
+    border-radius: 10px;
+    grid-template-columns:30px 1fr 20px;
+    align-items: center;
+    padding: 15px;
+    cursor:pointer;
+    background-color: #fff;
+}
+.refMap > div:hover{background-color: #f5f5f5;}
+.refMap > div > .color{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+.refMap > div > i{
+    font-size: 15px;
+    justify-self: center;
+    align-self: center;
+}
+
+/* clickRef */
+#clickRef{
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-content: center;
+    background-color:#444a;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 20px;
+}
+#clickRef > div{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+}
+#clickRef > div > div{
+    display: flex;
+    gap: 10px;
+}
+#clickRef > div > div > .fa-times{
+    background-color: red;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#clickRef > div > div > .fa-times:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+#clickRef > div > div > h2{
+    width: 100%;
+    text-align: left;
+}
+#clickRef > div > hr{
+    height: 2px;
+    border: 0;
+}
+
+
+@keyframes fadeTruck{
+    from{left:calc(var(--width) * -1);}
+    to{left:100%;}
+}
+@keyframes fadeCana {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.etapa > .done{
+    width: 100%;
+    height: 100%;
+    display: none;
+    grid-row: 1;
+    grid-column: 1;
+    justify-items: center;
+    align-items: center;
+    background-color: #999a;
+    opacity: 0;
+    --from:1;
+    --to:0;
+    z-index: 2;
+    align-content: center;
+    gap: 20px;
+}
+.etapa.done > .done{
+    display: grid;
+    --from:0;
+    --to:1;
+    animation: fadeOpacity 1s both;
+}
+@keyframes fadeOpacity{
+    from{opacity: var(--from);}
+    to{opacity: var(--to);}
+}
+
+.table{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(300px,100%),1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.boxT{
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    background-color: #eee;
+    border-radius: 20px;
+    padding: 20px;
+}
+.boxT > img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+.boxT > i{
+    width: 80px;
+    height: 80px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 35px;
+}
+.boxT :is(b){
+    font-size: 3.5rem;
+    font-weight: 900;
+    overflow-wrap: anywhere;
+    text-align: center;
+}

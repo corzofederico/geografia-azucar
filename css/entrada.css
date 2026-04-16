@@ -1,0 +1,41 @@
+.etapa[data-name="entrada"]{
+    overflow:hidden;
+    display: grid;
+    justify-content: center;
+    align-items: end;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr;
+    border-bottom: 10px solid green;
+    background-color: #4fd6ff;
+}
+.etapa[data-name="entrada"] > .company{
+    padding-top: 40px;
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: right;
+    width: 250px;
+    height: 200px;
+    object-fit: contain;
+    object-position: bottom right;
+    /* transform: scaleX(-1); */
+    z-index: 1;
+}
+.etapa[data-name="entrada"] > .truck{
+    --height:calc(200px / 4);
+    --width:calc(var(--height)*1.78);/*1.78 is the aspect ration based on height*/
+
+    grid-row: 1;
+    grid-column: 1;
+
+    position: relative;
+    left: -100%;
+
+    /* width: calc(25px * 20); */
+    width: var(--width);
+    height: var(--height);
+    /* height: calc(200px / 4); */
+
+    object-fit: contain;
+    object-position: bottom;
+}
+.etapa[data-name="entrada"].anim > .truck{animation:fadeTruck 5s linear both;}

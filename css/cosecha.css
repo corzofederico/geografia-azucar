@@ -1,0 +1,47 @@
+.etapa[data-name="cosecha"]{
+    overflow:hidden;
+    display: grid;
+    justify-content: center;
+    align-items: end;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr;
+    border-bottom: 10px solid green;
+    background-color: #4fd6ff;
+}
+.etapa[data-name="cosecha"] > div{align-self:center;}
+.etapa[data-name="cosecha"] > .cana{
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,25px);
+    gap: 5px;
+    justify-content: center;
+    height: 343px;
+    overflow: hidden;
+    margin-top: 40px;/*like padding*/
+}
+.etapa[data-name="cosecha"] > .cana > img{
+    width: 25px;
+    height: 343px;
+    object-fit: contain;
+    object-position: bottom;
+    transform: translateY(100%);
+    animation:fadeCana .5s both;
+}
+.etapa[data-name="cosecha"] > .truck{
+    --width:500px;
+    --height:343px;
+
+    grid-row: 1;
+    grid-column: 1;
+
+    position: relative;
+    left: calc(var(--width) * -1);
+
+    width: calc(25px * 20);
+    height: var(--height);
+
+    object-fit: contain;
+    object-position: bottom;
+}
+.etapa[data-name="cosecha"].anim > .truck{animation:fadeTruck 5s linear both;}

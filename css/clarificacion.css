@@ -1,0 +1,44 @@
+.etapa[data-name="clarificacion"]{
+    overflow:hidden;
+    display: grid;
+    justify-content: center;
+    align-items: end;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr;
+    border-bottom: 10px solid rgb(81, 52, 52);
+    background-color: rgb(255, 200, 200);
+}
+.etapa[data-name="clarificacion"] > .clarificacion{
+    padding-top: 20px;
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    object-position: bottom;
+    z-index: 1;
+}
+
+.etapa[data-name="clarificacion"] > .frasco{
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    align-self: center;
+    height: 80px;
+    object-fit: contain;
+    object-position: center;
+    position: relative;
+    left: calc(((400px - (20px * 2)) / 2) * -1);
+}
+.etapa[data-name="clarificacion"].anim > .frasco{
+    animation: fadeMF 4.5s linear both;
+}
+@keyframes fadeMF {
+    from{
+        left: calc(((400px - (20px * 2)) / 2) * -1);
+    }
+    to{
+        left: calc(((400px - (20px * 2)) / 2) * 1);
+    }
+}

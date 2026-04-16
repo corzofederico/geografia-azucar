@@ -1,0 +1,28 @@
+.etapa[data-name="evaporacion"]{
+    --width: calc(300px - (10px*2) - (10px*2));/* padding - border */
+    --height: calc(300px - (10px*2) - (10px*2));
+    justify-self: center;
+    overflow:hidden;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr auto;
+    border: 10px solid rgb(81, 52, 52);
+    background-color: rgb(187, 91, 91);
+}
+.etapa[data-name="evaporacion"] > .frasco{
+    width: 70px;
+    object-fit: contain;
+    justify-self: center;
+    align-self: center;
+}
+.etapa[data-name="evaporacion"] > .fuego{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,50px);
+    padding: 0 10px;
+    justify-content: center;
+    gap: 5px;
+}
+
+.etapa[data-name="evaporacion"] > .fuego > img{
+    width: 50px;
+}

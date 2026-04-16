@@ -1,0 +1,346 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1">
+    <title>Caña de Azucar</title>
+    <link rel="stylesheet" href="./css/css.css">
+    <link rel="stylesheet" href="./css/cosecha.css">
+    <link rel="stylesheet" href="./css/entrada.css">
+    <link rel="stylesheet" href="./css/molienda.css">
+    <link rel="stylesheet" href="./css/clarificacion.css">
+    <link rel="stylesheet" href="./css/evaporacion.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet" defer/>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+    <script src="./js/getProvs.js"></script>
+    <script src="./js/animations.js" defer></script>
+    <script src="./js/map.js" defer></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Caña de Azucar</h1>
+      <b>5˚A</b>
+      <b>Federico Corzo - M.Laura Lopez.P - Agustin Frizza - Catalina Goyanarte</b>
+      <i class="fas fa-arrow-down scrollDown" onclick="scrollDown()"></i>
+    </div>
+    <div class="section" data-name="desc">
+        <img src="./images/cana.jpg" alt="Caña" class="first">
+        <div class="second">
+            <h2>¿Que es la caña de azucar?</h2>
+            <p>La caña de azucar es una plata que tiene multiples tallos, los cuales son dulces, jugosos y duros, y suministra sacarosa para azúcar blanco o moreno.</p>
+            <p>Su origen es del sur de Asia, el cual mediante la colonizacion se fue expandiendo al resto del mundo llegando a otros continentes.</p>
+        </div>
+    </div>
+    <div class="section" data-name="production">
+        <img src="./images/cana.webp" alt="Caña" class="first">
+        <div class="second">
+            <h2>¿En que consiste la produccion de la caña de azucar?</h2>
+            <p>La producción de caña de azúcar es muy importante, no solo por su contribución al desarrollo agrícola e industrial, sino también por su capacidad para generar gran cantidad de empleo.</p>
+            <p>Además del suplemento calórico de la dieta alimentaria, producción de alcohol, componentes alimenticios para animales, bebidas, papel, repostería y dulces.</p>
+        </div>
+    </div>
+    <div>
+        <div class="sticky">
+            <h1>Areas aptas para su cultivo</h1>
+        </div>
+        <div class="section map" data-name="map">
+            <div class="first" id="map"></div>
+            <div class="second">
+                <h2>Referencias:</h2>
+                <div id="refApt" class="refMap"></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="sticky">
+            <h1>Requerimientos para la produccion</h1>
+        </div>
+        <div class="table" data-name="temp">
+            <div class="boxT">
+                <i class="fas fa-temperature-snow"></i>
+                <h3>Temperatura Minima</h3>
+                <b><b class="number" data-name="tempMin">0</b>˚</b>
+            </div>
+            <div class="boxT">
+                <i class="fas fa-temperature-list"></i>
+                <h3>Temperatura Ideal</h3>
+                <b>~<b class="number" data-name="tempIdeal">0</b>˚</b>
+            </div>
+            <div class="boxT">
+                <i class="fas fa-temperature-sun"></i>
+                <h3>Temperatura Maxima</h3>
+                <b><b class="number" data-name="tempMax">0</b>˚</b>
+            </div>
+            <div class="boxT">
+                <i class="fas fa-sun"></i>
+                <h3>Radiación Solar</h3>
+                <b>Mucha</b>
+            </div>
+            <div class="boxT">
+                <i class="fas fa-droplet"></i>
+                <h3>Lluvias Minimas anuales</h3>
+                <b><b class="number" data-name="rainMin">0</b>mm</b>
+            </div>
+            <div class="boxT">
+                <i class="fas fa-raindrops"></i>
+                <h3>Lluvias Maximas anuales</h3>
+                <b><b class="number" data-name="rainMax">0</b>mm</b>
+            </div>
+            <div class="boxT">
+                <i class="fas fa-faucet-drip"></i>
+                <h3>Disponibilidad Hidrica</h3>
+                <b>Alta</b>
+            </div>
+        </div>
+        <div class="section" data-name="dataExtraReqProd">
+            <img src="http://salonhogar.net/Salones/Ciencias/1-3/El_Suelo/corteterrenohumus.gif" class="first">
+            <div class="second">
+                <h2>Suelos</h2>
+                <p>Tolera gran variedad de suelos, pero los más adecuados son los de textura franca o franco-arcillosa, bien drenados y los suelos aluviales de textura mediana.</p>
+                <p>Requiere además, suelos provistos de suficientes cantidades de nutrientes o de buena fertilidad ya que es un cultivo que extrae grandes cantidades de nitrógeno, potasio y silicio.</p>
+            </div>
+        </div>
+        <div class="section" data-name="laboresCosecha">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Scythe_user.png/150px-Scythe_user.png" class="first">
+            <div class="second">
+                <h2>Labores de cosecha</h2>
+                <p>De la siembra a la cosecha el cultivo puede durar desde 14 y hasta 17 meses, luego, entre los meses 11 y 16 de la plantación, se hace la recolección.</p>
+                <p>Cuanto ya se desarrolla la planta, las hojas se marchitan y caen, la corteza de la capa se vuelve quebradiza. Se quema la plantación para eliminar las malezas que impiden el corte de la caña y posibles plagas como ratas de campo, víboras o tuzas que pudieran dañar a los cortadores o máquinas.</p>
+                <p>Si bien existen máquinas para hacer la recolección la mayoría de productores todavía lo hacen a mano. Aunque en Tucumán, el 80% de la actividad cañera esta mecanizada, por ende, mas productividad a lo largo de todo el proceso.</p>
+            </div>
+        </div>
+    </div>
+    <div data-name="cosecha">
+        <div class="sticky">
+            <h1>Etapa de cosecha</h1>
+        </div>
+        <div class="etapa" data-name="cosecha">
+            <div class="cana"></div>
+            <img src="./images/camion.png" class="truck"/>
+            <div class="done">
+                <button class="repeat">Repetir</button>
+            </div>
+        </div>
+        <div class="section" data-name="cosecha" style="--first:100%;">
+            <div class="second">
+                <h2>Cosecha:</h2>
+                <p>Luego de la siembra, se talan las cañas y se las recogen con un camion, para luego ser procesadas en la etapa industrial.</p>
+                <p>Una vez que la caña es obtenida, tenemos 48hrs antes de que empiece a perder la sacarosa, luego se lo lleva al ingenio donde se produce la azúcar.</p>
+                <p>El periodo mas difícil es en la época de invierno, los productores deben soportar este clima mientras trabajan.</p>
+                <h2>Tipos de tala:</h2>
+                <ol>
+                    <li>
+                        <b>Corte convencional:</b>
+                        <p>Cortar el tallo por la base, despuntarlo y prepararlo para el transporte</p>
+                    </li>
+                    <li>
+                        <b>Corte limpio:</b>
+                        <p>Quitar las hojas del tallo, cortar el tallo por la base, despuntarlo y prepararlo para el transporte</p>
+                    </li>
+                    <li>
+                        <b>Cosecha mecanizada:</b>
+                        <p>Se realiza mediante maquinaria de labor combinada. Y se denominan así porque se encargan de despuntar los tallos, cortarlos por la base y partirlos en trozos pequeños, eliminando las posibles impurezas presentes en la cosecha y prepararla para el transporte.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div data-name="entrada">
+        <div class="sticky">
+            <h1>Etapa de la entrada</h1>
+        </div>
+        <div class="etapa" data-name="entrada">
+            <img src="./images/company.png" class="company"/>
+            <img src="./images/camion.png" class="truck"/>
+            <div class="done">
+                <button class="repeat">Repetir</button>
+            </div>
+        </div>
+        <div class="section" data-name="entrada">
+            <img src="./images/cana_agua.png" class="first">
+            <div class="second">
+                <h2>Entrada:</h2>
+                <p>La caña entra en la <u>fábrica</u>, se pesa, y se las pone sobre mesas para luego lavarlas.</p>
+            </div>
+        </div>
+    </div>
+    <div data-name="molienda">
+        <div class="sticky">
+            <h1>Etapa de molienda</h1>
+        </div>
+        <div class="etapa" data-name="molienda">
+            <img src="./images/cana.svg" class="cana"/>
+            <img src="./images/trapiche.png" class="trapiche"/>
+            <img src="./images/maleza.png" class="maleza"/>
+            <img src="./images/bagazo.png" class="bagazo"/>
+            <div class="done">
+                <button class="repeat">Repetir</button>
+            </div>
+        </div>
+        <div class="section" data-name="molienda">
+            <div class="etapa first" data-name="moliendaBagazoEnergia">
+                <img src="./images/bagazo.png" class="bagazo"/>
+                <div class="fuego">
+                    <img src="./images/fuego.gif"/>
+                    <img src="./images/fuego.gif"/>
+                    <img src="./images/fuego.gif"/>
+                    <img src="./images/fuego.gif"/>
+                </div>
+                <div class="energia"><img src="./images/rayo.gif"/></div>
+            </div>
+            <div class="second">
+                <h2>Molienda:</h2>
+                <p>Se llevan los tallos de las cañas a un <u>trapiche</u> (la maquina), donde se las exprime para extraer la <b>maleza</b> (izquierda), que se convertirá en sacarosa, y el <b>bagazo</b> (derecha), que se usará en el resto del proceso para generar energía limpia con calderas y vapor, o se la almacena para su posterior uso en la generación de <u>papel</u>.</p>
+            </div>
+        </div>
+    </div>
+    <div data-name="clarificacion">
+        <div class="sticky">
+            <h1>Etapa de clarificación</h1>
+        </div>
+        <div class="etapa" data-name="clarificacion">
+            <img src="./images/clarificacion.png" class="clarificacion"/>
+            <img src="./images/maleza.png" class="frasco"/>
+            <div class="done">
+                <button class="repeat">Repetir</button>
+            </div>
+        </div>
+        <div class="section" data-name="clarificacion" style="--first:100%;">
+            <div class="second">
+                <h2>Clarificación:</h2>
+                <p>La <b>maleza</b> se le rebaja la azides, se la <u>calienta</u> hasta ebullición y se la lleva a los clarificadores, donde se sedimentan y decantan los sólidos al fondo del frasco.</p>
+            </div>
+        </div>
+    </div>
+    <div data-name="evaporacion">
+        <div class="sticky">
+            <h1>Etapa de evaporación</h1>
+        </div>
+        <div class="section" data-name="evaporacion">
+            <div class="etapa first" data-name="evaporacion">
+                <img src="./images/frasco_celeste.png" class="frasco"/>
+                <div class="fuego">
+                    <img src="./images/fuego.gif">
+                    <img src="./images/fuego.gif">
+                    <img src="./images/fuego.gif">
+                    <img src="./images/fuego.gif">
+                </div>
+                <div class="done">
+                    <button class="repeat">Repetir</button>
+                </div>
+            </div>
+            <div class="second">
+                <h2>Evaporación:</h2>
+                <p>Estos frascos se los pasa por <u>evaporadores</u>, que funcionan en cámaras de vacío (para que con menor temperatura evapore más rápido).</p>
+                <p>Aquí se extrae el 80% del contenido de agua, dando así una especie de <b>jarabe</b>.</p>
+            </div>
+        </div>
+    </div>
+    <div data-name="cristalizacion">
+        <div class="sticky">
+            <h1>Etapa de cristalización</h1>
+        </div>
+        <div class="section" data-name="cristalizacion" style="--first:100%;">
+            <div class="second">
+                <h2>Cristalización:</h2>
+                <p>El jarabe se cuece/calienta en frascos al vacío, dando <b>azúcar crudo</b> (para refinar) o <b>melaza</b> (destinada para los animales)</p>
+            </div>
+        </div>
+    </div>
+    <div data-name="separacion">
+        <div class="sticky">
+            <h1>Etapa de separación</h1>
+        </div>
+        <div class="section" data-name="separacion" style="--first:100%;">
+            <div class="second">
+                <h2>Separación:</h2>
+                <p>Los cristales producidos luego de la cristalización se separan de la miel restante en <u>centrifugadoras</u>. El líquido sale por una malla y los cristales quedan en el cilindro.</p>
+                <p>Este líquido vuelve al tacho, o se utiliza para la producción de <b>alcohol etílico</b>. Y los cristales se disuelven en agua caliente, y se envían a la refinería. Aunque algunos de esos cristales salen directamente para el <b>azúcar rubio o mascabo</b>.</p>
+            </div>
+        </div>
+    </div>
+    <div data-name="refinado">
+        <div class="sticky">
+            <h1>Etapa de refinado</h1>
+        </div>
+        <div class="section" data-name="refinado" style="--first:100%;">
+            <div class="second">
+                <h2>Refinado:</h2>
+                <p>Se eliminan los colorantes o materias inorgánicas que el azúcar pueda contener, luego se trata con ácido y para arrastrar las impurezas que resten, las cuales se retiran fácilmente en el clasificador, formando una mezcla homogénea.</p>
+                <p>El azúcar restante se cristaliza, pasa por las centrifugadoras nuevamente, y se le extrae los cristales.</p>
+            </div>
+        </div>
+    </div>
+    <div data-name="secado">
+        <div class="sticky">
+            <h1>Etapa de secado</h1>
+        </div>
+        <div class="section" data-name="secado" style="--first:100%;">
+            <div class="second">
+                <h2>Secado:</h2>
+                <p>Se secan los cristales con aire caliente, se los clasifica por tamaño y se los almacena en silos, para luego envasarlos.</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="sticky">
+            <h1>Eslabon Comercial</h1>
+        </div>
+        <!--div class="section" data-name="situationGlobal">
+            <img src="https://cdn.pixabay.com/photo/2012/04/01/17/14/earth-23593_960_720.png" class="first">
+            <div class="second">
+                <h2>Situacion mundial:</h2>
+                <p>La comercialización, de por sí muy diversificada, se va ajustando a las características de la demanda, la cual ha evolucionado en relación al crecimiento poblacional y preferencias en sintonía a las diferentes pautas culturales.</p>
+                <p>El continente Asiático, por su nivel demográfico, es la región de consumo más importante del mundo a pesar de tener un bajo índice en consumo de productos azucarados. Tan sólo la India consume el 15% del total mundial.</p>
+                <p>La estructura productiva y comercial en la campaña 2017/2018 fue liderada por Brasil con el 45% del total mundial. En orden de importancia le siguieron Tailandia 15%, Australia 6%, la Unión Europea 6%, India 3% y Guatemala 3%.</p>
+            </div>
+        </div-->
+        <div class="section" data-name="situationArg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" class="first">
+            <div class="second">
+                <h2>Situacion de la Argentina:</h2>
+                <p>Argentina solo aporta un punto del volumen total cosechado y tiene una muy baja incidencia en las exportaciones.</p>
+                <p>Sin embargo, el sector azucarero tiene gran importancia en la producción agroindustrial argentina, y una gravitación determinante en la economía del norte del país, especialmente en Tucumán. A partir de la desregulación del sector, en 1991, ha protagonizado una profunda transformación, y el fuerte incremento de su productividad lo llevó en 2005 a marcar el récord de 2,1 millones de toneladas de azúcar. Esto se logró gracias al trabajo en investigación genética (nuevas y mejores variedades de caña), el incremento de la inversión y a la optimización del proceso productivo.</p>
+                <p>Tucumán, Jujuy y Salta representan el 99,5% del total de la producción de azúcar del país. El resto se distribuye entre Misiones y Santa Fe.</p>
+                <p>De esta producción, el 90% va destinado al mercado interno, el 10% restante se exporta</p>
+            </div>
+        </div>
+        <div class="sticky">
+        <h1>Fuentes de la información</h1>
+        </div>
+        <div class="section" data-name="links">
+        <img src="https://icon-library.com/images/website-link-icon-png/website-link-icon-png-13.jpg" class="first">
+        <div class="second">
+        <h2>Links:</h2>
+        <div id="links"></div>
+        </div>
+        </div>
+    </div>
+    <!-- <div>
+        <div class="sticky">
+            <h1>Otros datos</h1>
+        </div>
+        <ul>
+            <li>La producción azucarera en Tucumán, comenzó en el siglo 17, pero se hizo importante recién a fines del siglo 19 con la llegada de los ferrocarriles.</li>
+            
+        </ul>
+    </div> -->
+    <div>
+        
+    </div>
+
+    <!-- clickRef -->
+    <div id="clickRef">
+        <div>
+            <div>
+                <h2 class="title"></h2>
+                <i class="fas fa-times"></i>
+            </div>
+            <hr/>
+            <b>Descripcion:</b>
+            <p class="desc"></p>
+            <b>Zona:</b>
+            <p class="zonas"></p>
+        </div>
+    </div>
+  </body>
+</html>
